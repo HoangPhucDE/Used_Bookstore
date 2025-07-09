@@ -7,6 +7,6 @@ Hello this's a Used_Bookstore Project in VanHien University.
     + Nguyen Hoang Phuc
       
 - We use:
-      + Programing Language: Java, etc...
-      + Structure Query Language: MySQL
-      + FarmeWork: JFrame
+    + Programing Language: Java, etc...
+    + Structure Query Language: MySQL
+    + FarmeWork: JFrame
