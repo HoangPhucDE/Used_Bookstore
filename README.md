@@ -5,4 +5,8 @@ Hello this's a Used_Bookstore Project in VanHien University.
     + Tran Thi Van Anh
     + Nguyen Chi Khanh
     + Nguyen Hoang Phuc
-- We use: Java, etc... for Backend
+      
+- We use:
+      + Programing Language: Java, etc...
+      + Structure Query Language: MySQL
+      + FarmeWork: JFrame
