@@ -88,7 +88,7 @@ Dự án xây dựng một hệ thống **toàn diện** phục vụ:
 - Java JDK 17 trở lên
 - MySQL Server
 - Scene Builder (tùy chọn)
-- IDE: IntelliJ IDEA / Eclipse / NetBeans
+- IDE: IntelliJ IDEA / Visual Studio Code
 
 ### 2. Clone dự án:
 ```bash
