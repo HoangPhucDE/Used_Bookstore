@@ -14,5 +14,4 @@ public class DataBaseConnection {
             return DriverManager.getConnection(URL, USER, PASSWORD);
         }
     }
-
 }
