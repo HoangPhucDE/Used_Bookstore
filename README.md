@@ -1,20 +1,24 @@
-# Used_Bookstore
-Hello this's a Used_Bookstore Project in VanHien University. 
-- We have 3 members:
-    + Nguyen Nhat Vi (Team Leader)
-    + Tran Thi Van Anh
-    + Nguyen Chi Khanh
-    + Nguyen Hoang Phuc
+# 📚 Used Bookstore Manager
 
-# 📘 HỆ THỐNG QUẢN LÝ VÀ BÁN SÁCH CŨ
+Hello! This is a project from **Van Hien University**.
 
-## 🎯 Giới thiệu
+### 👨‍👩‍👧‍👦 Nhóm thực hiện:
+- 👑 **Nguyen Nhat Vi** (Team Leader)
+- 👩‍💻 Tran Thi Van Anh
+- 👨‍💻 Nguyen Chi Khanh
+- 👨‍💻 Nguyen Hoang Phuc
 
-Dự án xây dựng một hệ thống **toàn diện** phục vụ:
+---
+
+## 📘 HỆ THỐNG QUẢN LÝ VÀ BÁN SÁCH CŨ
+
+### 🎯 Giới thiệu
+
+Hệ thống ứng dụng được xây dựng nhằm:
 - ✅ Quản lý hiệu sách nội bộ (sách, nhân viên, tài khoản, hóa đơn, thống kê)
-- ✅ Bán sách cũ cho khách hàng qua ứng dụng (JavaFX App hoặc Web)
+- ✅ Hỗ trợ khách hàng đặt mua sách cũ thông qua ứng dụng JavaFX
 
-Ứng dụng triển khai bằng **JavaFX + JDBC + MySQL**, có phân quyền rõ ràng cho admin, nhân viên và khách hàng.
+Ứng dụng sử dụng **JavaFX + JDBC + MySQL**, có phân quyền rõ ràng: **Admin**, **Nhân viên**, **Khách hàng**.
 
 ---
 
@@ -45,51 +49,54 @@ Dự án xây dựng một hệ thống **toàn diện** phục vụ:
 
 ## 🧩 Chức năng chính
 
-### ✅ Quản lý sách
-- Thêm/sửa/xóa sách
-- Tình trạng sách: sách mới / sách cũ
+### 📗 Quản lý sách
+- Thêm / sửa / xóa sách
+- Tình trạng sách: mới, cũ, tốt, trung bình
 - Tìm kiếm, phân loại
 
-### ✅ Quản lý nhân viên & tài khoản
-- Gắn tài khoản với nhân viên
+### 👨‍💼 Quản lý nhân viên & tài khoản
+- Tạo tài khoản cho nhân viên
 - Phân quyền `admin`, `user`, `khach`
 
-### ✅ Bán hàng
+### 🛒 Bán hàng
 - Tạo đơn hàng tại quầy (offline)
 - Đặt hàng online qua giỏ hàng
 
-### ✅ Khách hàng
+### 👤 Khách hàng
 - Xem sách, tìm kiếm
 - Thêm vào giỏ hàng
-- Thanh toán, theo dõi đơn hàng
+- Thanh toán và theo dõi đơn hàng
 
-### ✅ Thống kê
+### 📊 Thống kê
 - Doanh thu theo thời gian
-- Sách bán chạy, nhân viên bán tốt
-- Xuất báo cáo ra Excel / PDF
+- Sách bán chạy
+- Xuất báo cáo PDF hoặc Excel
 
 ---
 
-## 🗃️ Cơ sở dữ liệu (các bảng chính)
+## 🗃️ Cơ sở dữ liệu chính
 
-- `taikhoan` – quản lý đăng nhập, phân quyền
-- `nhanvien` – thông tin nhân viên nội bộ
-- `khachhang` – thông tin người mua sách
-- `sach` – danh mục sách
-- `giohang` – giỏ hàng của khách
-- `donhang` – đơn hàng chung (online + offline)
-- `chitiet_donhang` – chi tiết sách trong mỗi đơn
+| Bảng              | Chức năng                        |
+|-------------------|----------------------------------|
+| `taikhoan`        | Quản lý đăng nhập, phân quyền    |
+| `nhanvien`        | Quản lý nhân viên nội bộ         |
+| `khachhang`       | Lưu thông tin người dùng mua     |
+| `sach`            | Thông tin sách cũ                |
+| `giohang`         | Giỏ hàng của khách               |
+| `donhang`         | Đơn hàng chung (online/offline)  |
+| `chitiet_donhang` | Chi tiết các sách trong đơn hàng |
 
 ---
 
-## 🚀 Hướng dẫn chạy dự án
+## 🚀 Cài đặt & chạy ứng dụng
 
-### 1. Cài đặt yêu cầu:
+### ✅ Yêu cầu hệ thống
 - Java JDK 17 trở lên
 - MySQL Server
-- Scene Builder (tùy chọn)
-- IDE: IntelliJ IDEA / Visual Studio Code
+- IntelliJ IDEA / VSCode
+- Scene Builder (tùy chọn cho JavaFX)
 
-### 2. Clone dự án:
-```bash
+---
+
+#### Clone project
 git clone https://github.com/HoangPhucDE/Used-Bookstore-Manager.git
