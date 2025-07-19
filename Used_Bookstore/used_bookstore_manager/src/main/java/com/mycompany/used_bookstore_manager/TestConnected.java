@@ -1,5 +1,4 @@
-package com.example;
-
+package com.mycompany.used_bookstore_manager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
