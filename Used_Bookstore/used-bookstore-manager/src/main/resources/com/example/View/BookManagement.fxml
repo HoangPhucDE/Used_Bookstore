@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.controller.BookManagementController"
+            style="-fx-background-color: #f9f9fb;">
+
+    <!-- Header -->
+    <top>
+        <HBox spacing="15" alignment="CENTER_LEFT"
+              style="-fx-padding: 20 30; -fx-background-color: #ffffff;">
+            <Label text="📚 Quản lý Sách"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        </HBox>
+    </top>
+
+    <!-- Center Table -->
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <HBox spacing="10">
+                <TextField fx:id="searchField" promptText="🔍 Tìm kiếm theo tên sách hoặc tác giả"
+                           style="-fx-pref-width: 300; -fx-background-radius: 6;"/>
+                <Button text="Tìm kiếm" onAction="#searchBook"
+                        style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="+ Thêm sách" onAction="#showAddBookDialog"
+                        style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+            </HBox>
+
+            <TableView fx:id="bookTable" prefHeight="500">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colTitle" text="Tên sách" prefWidth="200"/>
+                    <TableColumn fx:id="colAuthor" text="Tác giả" prefWidth="150"/>
+                    <TableColumn fx:id="colCategory" text="Thể loại" prefWidth="100"/>
+                    <TableColumn fx:id="colPrice" text="Giá bán" prefWidth="100"/>
+                    <TableColumn fx:id="colStock" text="Tồn kho" prefWidth="80"/>
+                    <TableColumn fx:id="colRating" text="Đánh giá" prefWidth="100"/>
+                    <TableColumn fx:id="colActions" text="Hành động" prefWidth="150"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
