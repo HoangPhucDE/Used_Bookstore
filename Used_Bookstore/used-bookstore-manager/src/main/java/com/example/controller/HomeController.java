@@ -87,7 +87,7 @@ public class HomeController {
     @FXML
     private void goSales() {
         setActiveButton(salesBtn);
-        loadPage("/com/example/view/SalesManagement.fxml");
+        loadPage("/com/example/view/SalesView.fxml");
     }
     
     @FXML
