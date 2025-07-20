@@ -1,0 +1,17 @@
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+    -fx-pref-width: 180px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 20;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+.sidebar-button.active {
+    -fx-background-color: linear-gradient(to right, #7F7FD5, #86A8E7);
+    -fx-text-fill: white;
+}
