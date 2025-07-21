@@ -10,12 +10,12 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        // Load trang login đầu tiên
+        // Tải file FXML
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/View/Login.fxml"));
-        Parent root = loader.load();
 
+        Parent root = loader.load();
+        
         Scene loginScene = new Scene(root);
-      
 
         primaryStage.setTitle("Used Bookstore Manager - Login");
         primaryStage.setScene(loginScene);

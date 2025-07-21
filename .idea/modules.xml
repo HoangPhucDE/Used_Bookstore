@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Used-Bookstore-Manager.iml" filepath="$PROJECT_DIR$/.idea/Used-Bookstore-Manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Used_Bookstore/used-bookstore-manager/used-bookstore-manager.iml" filepath="$PROJECT_DIR$/Used_Bookstore/used-bookstore-manager/used-bookstore-manager.iml" />
     </modules>
   </component>
 </project>
