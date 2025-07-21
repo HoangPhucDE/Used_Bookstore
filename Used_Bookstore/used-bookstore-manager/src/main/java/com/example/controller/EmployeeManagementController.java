@@ -42,7 +42,7 @@ public class EmployeeManagementController {
 
     private void addActionButtons() {
         colActions.setCellFactory(param -> new TableCell<>() {
-            private final Button btnDelete = new Button("❌");
+            private final Button btnDelete = new Button("Xóa");
             {
                 btnDelete.setStyle("-fx-background-color: #e74c3c; -fx-text-fill: white;");
                 btnDelete.setOnAction(e -> {
