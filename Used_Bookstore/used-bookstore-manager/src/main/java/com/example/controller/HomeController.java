@@ -1,13 +1,14 @@
 package com.example.controller;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
-import java.io.IOException;
 
 public class HomeController {
-    
+
     // Khai báo các button navigation và content pane
     @FXML private Button homeBtn;
     @FXML private Button bookBtn;
@@ -16,7 +17,7 @@ public class HomeController {
     @FXML private Button salesBtn;
     @FXML private Button statsBtn;
     @FXML private StackPane contentPane;
-    
+
     // Style cho button active và inactive
     private final String ACTIVE_STYLE = "-fx-background-color: linear-gradient(to right, #667eea, #764ba2); " +
                                        "-fx-text-fill: white; " +
@@ -25,7 +26,7 @@ public class HomeController {
                                        "-fx-font-size: 14px; " +
                                        "-fx-font-weight: 500; " +
                                        "-fx-alignment: center-left;";
-    
+
     private final String INACTIVE_STYLE = "-fx-background-color: transparent; " +
                                          "-fx-text-fill: #2c3e50; " +
                                          "-fx-background-radius: 8; " +
@@ -33,23 +34,22 @@ public class HomeController {
                                          "-fx-font-size: 14px; " +
                                          "-fx-font-weight: 500; " +
                                          "-fx-alignment: center-left;";
-    
+
     @FXML
     public void initialize() {
-        
+
         goHome(); // Gọi hàm đầy đủ để load luôn trang dashboard
 
     }
-    
+
     // Method để set button active
     private void setActiveButton(Button activeButton) {
         // Reset tất cả button về inactive
         resetAllButtons();
-        
         // Set button được chọn thành active
         activeButton.setStyle(ACTIVE_STYLE);
     }
-    
+
     // Reset tất cả button về trạng thái inactive
     private void resetAllButtons() {
         if (homeBtn != null) homeBtn.setStyle(INACTIVE_STYLE);
@@ -59,43 +59,43 @@ public class HomeController {
         if (salesBtn != null) salesBtn.setStyle(INACTIVE_STYLE);
         if (statsBtn != null) statsBtn.setStyle(INACTIVE_STYLE);
     }
-    
+
     @FXML
     private void goHome() {
         setActiveButton(homeBtn);
         loadHomePage();
     }
-    
+
     @FXML
     private void goBook() {
         setActiveButton(bookBtn);
         loadPage("/com/example/view/BookManagement.fxml");
     }
-    
+
     @FXML
     private void goEmployee() {
         setActiveButton(employeeBtn);
         loadPage("/com/example/view/EmployeeManagement.fxml");
     }
-    
+
     @FXML
     private void goUser() {
         setActiveButton(userBtn);
         loadPage("/com/example/view/UserManagement.fxml");
     }
-    
+
     @FXML
     private void goSales() {
         setActiveButton(salesBtn);
         loadPage("/com/example/view/SalesView.fxml");
     }
-    
+
     @FXML
     private void goStats() {
         setActiveButton(statsBtn);
         loadPage("/com/example/view/StatsManagement.fxml");
     }
-    
+
     // Method để load trang
     private void loadPage(String fxmlPath) {
         try {
@@ -107,7 +107,7 @@ public class HomeController {
             System.err.println("Không thể load trang: " + fxmlPath);
         }
     }
-    
+
     // Method để load trang chủ mặc định
     private void loadHomePage() {
         contentPane.getChildren().clear();
@@ -122,7 +122,7 @@ public class HomeController {
             contentPane.getChildren().add(welcomeLabel);
         }
     }
-    
+
     @FXML
 private void logout() {
     try {
@@ -143,3 +143,4 @@ private void logout() {
 }
 
 }
+// 
