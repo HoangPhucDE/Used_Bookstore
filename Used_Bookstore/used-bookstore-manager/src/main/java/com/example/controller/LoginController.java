@@ -34,7 +34,6 @@ private void handleLogin() {
         return;
     }
 
-    // TODO: Kiểm tra đăng nhập hợp lệ
     if (username.equals("admin") && password.equals("123456")) {
         // Nếu đăng nhập đúng, chuyển sang Home.fxml
         try {

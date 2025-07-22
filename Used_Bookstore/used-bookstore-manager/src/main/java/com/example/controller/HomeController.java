@@ -93,7 +93,7 @@ public class HomeController {
     @FXML
     private void goStats() {
         setActiveButton(statsBtn);
-        loadPage("/com/example/view/StatsManagement.fxml");
+        loadPage("/com/example/view/Statistics.fxml");
     }
 
     // Method để load trang
