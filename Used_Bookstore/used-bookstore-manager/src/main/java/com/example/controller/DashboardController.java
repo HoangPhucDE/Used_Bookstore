@@ -1,13 +1,14 @@
 package com.example.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+
 
 public class DashboardController {
 
@@ -37,7 +38,7 @@ public class DashboardController {
         totalUsersLabel.setText("567");
         totalSalesLabel.setText("1,234");
         totalRevenueLabel.setText("45,678,900 ₫");
-        
+
         // Mock data cho hôm nay
         todayBooksLabel.setText("23");
         todayUsersLabel.setText("12");
@@ -63,7 +64,7 @@ public class DashboardController {
         if (revenueChart != null) {
             XYChart.Series<String, Number> series = new XYChart.Series<>();
             series.setName("Doanh thu");
-            
+
             series.getData().add(new XYChart.Data<>("T1", 2500000));
             series.getData().add(new XYChart.Data<>("T2", 3200000));
             series.getData().add(new XYChart.Data<>("T3", 2800000));
@@ -71,7 +72,7 @@ public class DashboardController {
             series.getData().add(new XYChart.Data<>("T5", 3600000));
             series.getData().add(new XYChart.Data<>("T6", 4500000));
             series.getData().add(new XYChart.Data<>("T7", 3900000));
-            
+
             revenueChart.getData().clear();
             revenueChart.getData().add(series);
             revenueChart.setTitle("Doanh thu 7 ngày qua");
@@ -82,13 +83,13 @@ public class DashboardController {
         if (bookChart != null) {
             XYChart.Series<String, Number> series = new XYChart.Series<>();
             series.setName("Số lượng bán");
-            
+
             series.getData().add(new XYChart.Data<>("Đắc nhân tâm", 45));
             series.getData().add(new XYChart.Data<>("Harry Potter", 38));
             series.getData().add(new XYChart.Data<>("Lập trình Java", 32));
             series.getData().add(new XYChart.Data<>("Tư duy nhanh chậm", 28));
             series.getData().add(new XYChart.Data<>("Nhà giả kim", 25));
-            
+
             bookChart.getData().clear();
             bookChart.getData().add(series);
             bookChart.setTitle("Top 5 sách bán chạy");
@@ -102,7 +103,7 @@ public class DashboardController {
         setupCategoryChart();
         setupRevenueChart();
         setupBookChart();
-        
+
         System.out.println("Dashboard đã được làm mới!");
     }
 
