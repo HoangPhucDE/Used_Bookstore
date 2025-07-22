@@ -15,7 +15,6 @@ public class Main extends Application {
         Parent root = loader.load();
 
         Scene loginScene = new Scene(root);
-      
 
         primaryStage.setTitle("Used Bookstore Manager - Login");
         primaryStage.setScene(loginScene);
