@@ -1,3 +1,31 @@
+<!DOCTYPE project [
+        <!ELEMENT project (modelVersion|groupId|artifactId|version|properties|dependencies|build|name)*>
+        <!ATTLIST project
+                xmlns CDATA #REQUIRED
+                xmlns:xsi CDATA #REQUIRED
+                xsi:schemaLocation CDATA #REQUIRED>
+        <!ELEMENT modelVersion (#PCDATA)>
+        <!ELEMENT groupId (#PCDATA)>
+        <!ELEMENT artifactId (#PCDATA)>
+        <!ELEMENT version (#PCDATA)>
+        <!ELEMENT properties (project.build.sourceEncoding|maven.compiler.source|maven.compiler.target|javafx.version)*>
+        <!ELEMENT project.build.sourceEncoding (#PCDATA)>
+        <!ELEMENT maven.compiler.source (#PCDATA)>
+        <!ELEMENT maven.compiler.target (#PCDATA)>
+        <!ELEMENT javafx.version (#PCDATA)>
+        <!ELEMENT dependencies (dependency)*>
+        <!ELEMENT dependency (groupId|artifactId|version)*>
+        <!ELEMENT build (plugins)*>
+        <!ELEMENT plugins (plugin)*>
+        <!ELEMENT plugin (groupId|artifactId|version|configuration|executions)*>
+        <!ELEMENT configuration (mainClass)*>
+        <!ELEMENT mainClass (#PCDATA)>
+        <!ELEMENT executions (execution)*>
+        <!ELEMENT execution (goals)*>
+        <!ELEMENT goals (goal)*>
+        <!ELEMENT goal (#PCDATA)>
+        <!ELEMENT name (#PCDATA)>
+        ]>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -44,12 +72,12 @@
                 <version>0.0.8</version>
                 <configuration>
                     <mainClass>com.example.Main</mainClass>
-                    <jvmArgs>
-                        --module-path
-                        D:/Library/JavaFX SDK/javafx-sdk-21.0.8/lib
-                        --add-modules
-                        javafx.controls,javafx.fxml
-                    </jvmArgs>
+
+                    --module-path
+                    "C:\Library\javafx-sdk-24.0.2\lib"
+                    --add-modules
+                    javafx.controls,javafx.fxml
+
                 </configuration>
                 <executions>
                     <execution>

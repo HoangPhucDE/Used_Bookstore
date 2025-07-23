@@ -19,7 +19,7 @@
                <children>
                   <!-- Icon placeholder - you can add an ImageView here -->
                   <Label style="-fx-background-color: #667eea; -fx-text-fill: white; -fx-background-radius: 30; -fx-min-width: 60; -fx-min-height: 60; -fx-alignment: center; -fx-font-size: 24px;">
-                     👤
+
                   </Label>
                   
                   <Label text="ĐĂNG NHẬP HỆ THỐNG" textFill="#333333">
