@@ -46,13 +46,7 @@
               prefWidth="280">
             
             <!-- Navigation Title -->
-            <Label text="ĐIỀU HƯỚNG" 
-                   style="-fx-font-size: 12px; 
-                          -fx-font-weight: bold; 
-                          -fx-text-fill: #95a5a6; 
-                          -fx-padding: 10 0 15 0;">
-            </Label>
-            
+           
             <!-- Navigation Buttons với fx:id -->
             <Button fx:id="homeBtn"
                     text="🏠  Trang chủ" 
