@@ -6,11 +6,15 @@
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.controller.SalesController"
-            style="-fx-background-color: #fdfdfd;">
-
+             style="-fx-background-color: #f9f9fb;">
+   <top>
+        <HBox spacing="15" alignment="CENTER_LEFT" style="-fx-padding: 20 30; -fx-background-color: white;">
+            <Label text="🛒 Bán sách" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        </HBox>
+    </top>
     <center>
         <VBox spacing="20" style="-fx-padding: 20;">
-            <Label text="🛒 Bán sách" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+           
 
             <!-- Chọn sách -->
             <HBox spacing="10">
