@@ -26,6 +26,8 @@ public class LoginController {
     @FXML
     private Button loginButton;
 
+    public static int curentUserId; //Lưu id User login vào biến này
+
     @FXML
     private void handleLogin() {
         String username = usernameField.getText();
@@ -48,6 +50,7 @@ public class LoginController {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     loginSuccess = true;
+                    LoginController.curentUserId = rs.getInt("id"); //Load id user vào
                 }
             }
 
