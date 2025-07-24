@@ -11,27 +11,40 @@ import java.util.List;
 
 public class SalesController {
 
-    @FXML private ComboBox<String> bookCombo;
-    @FXML private TextField quantityField;
-    @FXML private TableView<OrderItem> orderTable;
-    @FXML private TableColumn<OrderItem, String> colBookTitle;
-    @FXML private TableColumn<OrderItem, Integer> colQuantity;
-    @FXML private TableColumn<OrderItem, Double> colUnitPrice;
-    @FXML private TableColumn<OrderItem, Double> colTotalPrice;
+    @FXML
+    private ComboBox<String> bookCombo;
+    @FXML
+    private TextField quantityField;
+    @FXML
+    private TableView<OrderItem> orderTable;
+    @FXML
+    private TableColumn<OrderItem, String> colBookTitle;
+    @FXML
+    private TableColumn<OrderItem, Integer> colQuantity;
+    @FXML
+    private TableColumn<OrderItem, Double> colUnitPrice;
+    @FXML
+    private TableColumn<OrderItem, Double> colTotalPrice;
 
-    @FXML private TextField nameField, phoneField, emailField, addressField;
-    @FXML private Label totalLabel;
+    @FXML
+    private TextField nameField, phoneField, emailField, addressField;
+    @FXML
+    private Label totalLabel;
 
     private final ObservableList<OrderItem> cartItems = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
         bookCombo.getItems().addAll("Lập trình Java", "Cấu trúc dữ liệu", "SQL cơ bản");
-        
-        colBookTitle.setCellValueFactory(cell -> new javafx.beans.property.SimpleStringProperty(cell.getValue().getBookTitle()));
-        colQuantity.setCellValueFactory(cell -> new javafx.beans.property.SimpleIntegerProperty(cell.getValue().getQuantity()).asObject());
-        colUnitPrice.setCellValueFactory(cell -> new javafx.beans.property.SimpleDoubleProperty(cell.getValue().getUnitPrice()).asObject());
-        colTotalPrice.setCellValueFactory(cell -> new javafx.beans.property.SimpleDoubleProperty(cell.getValue().getTotalPrice()).asObject());
+
+        colBookTitle.setCellValueFactory(
+                cell -> new javafx.beans.property.SimpleStringProperty(cell.getValue().getBookTitle()));
+        colQuantity.setCellValueFactory(
+                cell -> new javafx.beans.property.SimpleIntegerProperty(cell.getValue().getQuantity()).asObject());
+        colUnitPrice.setCellValueFactory(
+                cell -> new javafx.beans.property.SimpleDoubleProperty(cell.getValue().getUnitPrice()).asObject());
+        colTotalPrice.setCellValueFactory(
+                cell -> new javafx.beans.property.SimpleDoubleProperty(cell.getValue().getTotalPrice()).asObject());
 
         orderTable.setItems(cartItems);
     }
@@ -87,8 +100,7 @@ public class SalesController {
                 phoneField.getText(),
                 emailField.getText(),
                 addressField.getText(),
-                List.copyOf(cartItems)
-        );
+                List.copyOf(cartItems));
 
         showAlert("Đơn hàng đã được xác nhận!\nTổng tiền: " + order.getTotal() + " VNĐ");
         cartItems.clear();
