@@ -1,6 +1,6 @@
 package com.example.controller;
-import com.example.DataBaseConnection.DatabaseConnection;
 import com.example.model.DoanhThu;
+import com.example.DatabaseConnection;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
