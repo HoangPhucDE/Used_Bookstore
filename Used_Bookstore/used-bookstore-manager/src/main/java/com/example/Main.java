@@ -14,12 +14,14 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/View/Login.fxml"));
 
         Parent root = loader.load();
-        
+
         Scene loginScene = new Scene(root);
 
         primaryStage.setTitle("Used Bookstore Manager - Login");
         primaryStage.setScene(loginScene);
-        primaryStage.setResizable(false);
+        primaryStage.setResizable(true); // Cho phép thay đổi kích thước
+        primaryStage.setMaximized(true); // Tự động full màn hình (nếu muốn)
+
         primaryStage.show();
     }
 
