@@ -1,6 +1,5 @@
 package com.example.controller;
-
-import com.example.DataBaseConnection.DatabaseConnection;
+import com.example.DatabaseConnection;
 import com.example.model.Book;
 import com.example.model.OrderItem;
 import javafx.collections.FXCollections;
