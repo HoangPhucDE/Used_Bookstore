@@ -54,8 +54,8 @@ public class DoanhThuController {
     """;
 
         try (Connection conn = DatabaseConnection.getConnection();
-                PreparedStatement stmt = conn.prepareStatement(query);
-                ResultSet rs = stmt.executeQuery()) {
+             PreparedStatement stmt = conn.prepareStatement(query);
+             ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
                 String ngay = rs.getString("ngay");
@@ -85,8 +85,7 @@ public class DoanhThuController {
             if (file == null)
                 return;
 
-            Document document = new Document();
-            PdfWriter.getInstance(document, new FileOutputStream(file));
+            Document document = new Document();PdfWriter.getInstance(document, new FileOutputStream(file));
             document.open();
 
             document.add(new Paragraph("BÁO CÁO DOANH THU\n\n"));
