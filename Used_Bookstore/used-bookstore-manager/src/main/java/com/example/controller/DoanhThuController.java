@@ -1,5 +1,5 @@
 package com.example.controller;
-
+import com.example.DataBaseConnection.DatabaseConnection;
 import com.example.model.DoanhThu;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPTable;
@@ -43,12 +43,19 @@ public class DoanhThuController {
 
     private void loadDoanhThuFromDB() {
         doanhThuList.clear();
-        String query = "SELECT DATE(ngay_ban) AS ngay, COUNT(*) AS tongDon, SUM(tong_tien) AS tongTien FROM hoadon GROUP BY DATE(ngay_ban)";
+        String query = """
+        SELECT DATE(ngay_tao) AS ngay, 
+               COUNT(*) AS tongDon, 
+               SUM(tong_tien) AS tongTien 
+        FROM donhang 
+        WHERE trang_thai = 'hoan_thanh'
+        GROUP BY DATE(ngay_tao)
+        ORDER BY ngay DESC
+    """;
 
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/quanlysachcu", "root",
-                "123456");
-                PreparedStatement stmt = conn.prepareStatement(query);
-                ResultSet rs = stmt.executeQuery()) {
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query);
+             ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
                 String ngay = rs.getString("ngay");
@@ -78,8 +85,7 @@ public class DoanhThuController {
             if (file == null)
                 return;
 
-            Document document = new Document();
-            PdfWriter.getInstance(document, new FileOutputStream(file));
+            Document document = new Document();PdfWriter.getInstance(document, new FileOutputStream(file));
             document.open();
 
             document.add(new Paragraph("BÁO CÁO DOANH THU\n\n"));
