@@ -178,6 +178,47 @@ public class SalesController {
         }
     }
 
+//    private void confirmAndInsertCustomerIfNotExists(String name, String phone, String email, String address) {
+//        String checkQuery = "SELECT id FROM khachhang WHERE sdt = ?";
+//        String insertQuery = "INSERT INTO khachhang (ho_ten, sdt, email, dia_chi) VALUES (?, ?, ?, ?)";
+//
+//        try (Connection conn = DatabaseConnection.getConnection();
+//             PreparedStatement checkStmt = conn.prepareStatement(checkQuery)) {
+//
+//            checkStmt.setString(1, phone);
+//            ResultSet rs = checkStmt.executeQuery();
+//
+//            if (!rs.next()) {
+//                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+//                alert.setTitle("Thêm khách hàng mới");
+//                alert.setHeaderText("Số điện thoại chưa có trong hệ thống.");
+//                alert.setContentText("Bạn có muốn lưu thông tin khách hàng này không?");
+//                ButtonType yes = new ButtonType("Có", ButtonBar.ButtonData.YES);
+//                ButtonType no = new ButtonType("Không", ButtonBar.ButtonData.NO);
+//                alert.getButtonTypes().setAll(yes, no);
+//
+//                alert.showAndWait().ifPresent(result -> {
+//                    if (result == yes) {
+//                        try (PreparedStatement insertStmt = conn.prepareStatement(insertQuery)) {
+//                            insertStmt.setString(1, name);
+//                            insertStmt.setString(2, phone);
+//                            insertStmt.setString(3, email);
+//                            insertStmt.setString(4, address);
+//                            insertStmt.executeUpdate();
+//                            showAlert("Thành công", "Đã lưu thông tin khách hàng mới.");
+//                        } catch (SQLException ex) {
+//                            showAlert("Lỗi", "Không thể lưu khách hàng: " + ex.getMessage());
+//                        }
+//                    }
+//                });
+//            }
+//
+//        } catch (SQLException e) {
+//            showAlert("Lỗi", "Không thể kiểm tra khách hàng: " + e.getMessage());
+//        }
+//    }
+
+
     @FXML
     public void handleSubmitOrder() {
         if (cartItems.isEmpty() || nameField.getText().isEmpty()) {
@@ -250,6 +291,14 @@ public class SalesController {
 
                 conn.commit();
                 showRecentOrder(orderId); // Hiển thị đơn hàng vừa tạo
+                // Xác nhận và thêm khách hàng nếu chưa tồn tại
+//                confirmAndInsertCustomerIfNotExists(
+//                        nameField.getText(),
+//                        phoneField.getText(),
+//                        emailField.getText(),
+//                        addressField.getText()
+//                );
+
                 showAlert("Thành công", "Đơn hàng đã được lưu. Tổng tiền: " + total + " VNĐ");
                 cartItems.clear();
                 updateTotal();
@@ -258,6 +307,13 @@ public class SalesController {
                 allBooks.clear();
                 loadBooksFromDatabase(); // Load lại sách từ database
 
+                showAlert("Thành công", "Đơn hàng đã được lưu. Tổng tiền: " + total + " VNĐ");
+                cartItems.clear();
+                updateTotal();
+                resetForm();
+                bookCombo.getItems().clear();
+                allBooks.clear();
+                loadBooksFromDatabase(); // Load lại sách từ database
 
             } catch (SQLException e) {
                 conn.rollback();
