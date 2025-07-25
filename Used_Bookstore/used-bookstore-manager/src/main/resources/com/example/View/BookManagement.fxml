@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
@@ -21,8 +20,10 @@
     <!-- Center Table -->
     <center>
         <VBox spacing="15" style="-fx-padding: 20;">
+
+            <!-- Search + Add Book Button -->
             <HBox spacing="10">
-                <TextField fx:id="searchField" promptText="🔍 Tìm kiếm theo tên sách hoặc tác giả"
+                <TextField fx:id="timkiem" promptText="🔍 Tìm kiếm theo tên sách hoặc tác giả"
                            style="-fx-pref-width: 300; -fx-background-radius: 6;"/>
                 <Button text="Tìm kiếm" onAction="#searchBook"
                         style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
@@ -31,6 +32,26 @@
                         style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
             </HBox>
 
+            <!-- Input Fields (ẩn lúc đầu, hiển thị khi nhấn Thêm sách) -->
+            <HBox fx:id="inputSection" spacing="10" visible="false" managed="false">
+                <VBox spacing="5">
+                    <TextField fx:id="titleInput" promptText="Tên sách"/>
+                    <TextField fx:id="authorInput" promptText="Tác giả"/>
+                    <TextField fx:id="categoryInput" promptText="Thể loại"/>
+                </VBox>
+                <VBox spacing="5">
+                    <TextField fx:id="priceInput" promptText="Giá"/>
+                    <TextField fx:id="stockInput" promptText="Tồn kho"/>
+                    <TextField fx:id="ratingInput" promptText="Đánh giá"/>
+                </VBox>
+
+                <Button fx:id="addBookButton" text="Thêm sách" onAction="#handleAddBook"
+                        style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-pref-height: 75px;"/>
+
+
+            </HBox>
+
+            <!-- TableView -->
             <TableView fx:id="bookTable" prefHeight="500">
                 <columns>
                     <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
@@ -43,6 +64,7 @@
                     <TableColumn fx:id="colActions" text="Hành động" prefWidth="150"/>
                 </columns>
             </TableView>
+
         </VBox>
     </center>
 </BorderPane>
