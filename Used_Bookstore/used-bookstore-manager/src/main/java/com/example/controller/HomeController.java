@@ -141,7 +141,7 @@ public class HomeController {
     @FXML
     private void goBook() {
         setActiveButton(bookBtn);
-        loadPage("/com/example/view/BookManagement.fxml");
+        loadPage("/com/example/View/BookManagement.fxml");
     }
 
     @FXML
