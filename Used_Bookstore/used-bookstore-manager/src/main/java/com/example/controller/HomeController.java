@@ -60,6 +60,7 @@ public class HomeController {
             "-fx-font-size: 14px; " +
             "-fx-font-weight: 500; " +
             "-fx-alignment: center-left;";
+    private String username;
 
     @FXML
     public void initialize() {
@@ -82,15 +83,16 @@ public class HomeController {
 
     public void setUser(String username, String role) {
         this.role = role;
+        this.username = username;
          if (usernameLabel != null) {
         usernameLabel.setText("👤 " + username);
     }
 
         switch (role) {
-            case "ADMIN" -> {
+            case "admin" -> {
                 // Admin: full quyền, không cần ẩn gì cả
             }
-            case "EMPLOYEE" -> {
+            case "user" -> {
                 bookBtn.setVisible(false); // Không được quản lý sách
                 employeeBtn.setVisible(false); // Không được quản lý nhân viên
                 userBtn.setVisible(false);
@@ -98,7 +100,7 @@ public class HomeController {
                 sidebar.setVisible(false);
                 goSales();
             }
-            case "CUSTOMER" -> {
+            case "khach" -> {
                 sidebar.setVisible(false); // Ẩn sidebar cho khách hàng
                 bookBtn.setVisible(false); // Không được quản lý sách
                 employeeBtn.setVisible(false); // Không được quản lý nhân viên

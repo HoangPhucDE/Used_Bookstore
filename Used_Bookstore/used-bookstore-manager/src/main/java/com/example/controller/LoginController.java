@@ -27,6 +27,8 @@ public class LoginController {
     private Button loginButton;
 
     public static int curentUserId; //Lưu id User login vào biến này
+    public static String curentUserRole;
+    public static String curentUserName;
 
     @FXML
     private void handleLogin() {
@@ -51,6 +53,8 @@ public class LoginController {
                 if (rs.next()) {
                     loginSuccess = true;
                     LoginController.curentUserId = rs.getInt("id"); //Load id user vào
+                    LoginController.curentUserRole = rs.getString("vai_tro"); //Load role user
+                    LoginController.curentUserName = rs.getString("username"); //Load username
                 }
             }
 
@@ -64,6 +68,10 @@ public class LoginController {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/View/Home.fxml"));
                 Parent homeRoot = loader.load();
+
+                HomeController homeController = loader.getController();
+                homeController.setUser(curentUserName, curentUserRole);
+
                 Scene homeScene = new Scene(homeRoot);
                 Stage currentStage = (Stage) loginButton.getScene().getWindow();
                 currentStage.setScene(homeScene);
