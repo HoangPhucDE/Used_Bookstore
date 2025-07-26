@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.DataBaseConnection.DatabaseConnection;
+import com.example.DatabaseConnection;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
